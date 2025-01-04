@@ -1,22 +1,22 @@
 {% extends "base.html" %} {% block content %}
-<h1>ToDo List #1:</h1>
-<ul>
+<h1>ToDo Лист #1:</h1>
+<ul style="list-style: none">
     {% for todo in todos %}
     <li>
-        {{ todo.title }}: {% if todo.completed %}Completed{% else %}Not completed{% endif %}
+        {{ todo.title }}: {% if todo.completed %}✅{% else %}❎{% endif %}
     </li>
     {% endfor %}
 </ul>
-<h1>ToDo List #2:</h1>
-<ul>
+<h1>ToDo Лист #2:</h1>
+<ul style="list-style: none">
     {% for todo in todos2%}
     <li>
-        {{ todo.title }}: {% if todo.completed %}Completed{% else %}Not completed{% endif %}
+        {{ todo.title }}: {% if todo.completed %}✅{% else %}❎{% endif %}
     </li>
     {% endfor %}
 </ul>
-<h1>Our playlist:</h1>
-<ul>
+<h1>Мой плейлист:</h1>
+<ul style="list-style: none">
     {% for music in musics%}
     <li>
         {{ music.title }}: <a href="{{music.youtubelink}}">Click</a>
