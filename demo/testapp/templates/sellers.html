@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<h1>Наши продавцы:</h1>
+<ul class="ullist" style="list-style: none">
+    {% for year, sellers in grouped_sellers.items %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"><li><h1 class="navbar-brand" href="#">{{ year }} курс:</h1></li></nav>
+        <ul>
+            {% for seller in sellers %}
+                <li class="listyle" style="list-style: none">
+                    <a class="navbar-brand" >{{ seller.StudentName }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>
+{% endblock %}

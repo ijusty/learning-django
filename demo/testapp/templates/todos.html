@@ -1,25 +1,31 @@
 {% extends "base.html" %} {% block content %}
+<style>
+    .ullist { counter-reset: item }
+    .listyle { display: block }
+    .listyle:before { content: counters(item, ".") ". "; counter-increment: item }
+</style>
+
 <h1>ToDo Лист #1:</h1>
-<ul style="list-style: none">
+<ul class="ullist">
     {% for todo in todos %}
-    <li>
+    <li class="listyle">
         {{ todo.title }}: {% if todo.completed %}✅{% else %}❎{% endif %}
     </li>
     {% endfor %}
 </ul>
 <h1>ToDo Лист #2:</h1>
-<ul style="list-style: none">
-    {% for todo in todos2%}
-    <li>
+<ul class="ullist">
+    {% for todo in todos2 %}
+    <li class="listyle">
         {{ todo.title }}: {% if todo.completed %}✅{% else %}❎{% endif %}
     </li>
     {% endfor %}
 </ul>
 <h1>Мой плейлист:</h1>
-<ul style="list-style: none">
-    {% for music in musics%}
-    <li>
-        {{ music.title }}: <a href="{{music.youtubelink}}">Click</a>
+<ul class="ullist">
+    {% for music in musics %}
+    <li class="listyle">
+        {{ music.title }}: <a href="{{ music.youtubelink }}">Click</a>
     </li>
     {% endfor %}
 </ul>

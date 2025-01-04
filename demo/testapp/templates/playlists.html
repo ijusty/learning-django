@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<style>
+    .ullist { counter-reset: item }
+    .listyle { display: block }
+    .listyle:before { content: counters(item, ".") ". "; counter-increment: item }
+</style>
+
+
+<h1>Мой плейлист:</h1>
+<p>Названия песен кликабельны</p>
+<ul class="ullist">
+    {% for music in musics %}
+    <li class="listyle">
+        <a href="{{ music.youtubelink }}">{{ music.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
