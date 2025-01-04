@@ -1,9 +1,25 @@
 {% extends "base.html" %} {% block content %}
-<h1>Simple ToDo list</h1>
+<h1>ToDo List #1:</h1>
 <ul>
     {% for todo in todos %}
     <li>
         {{ todo.title }}: {% if todo.completed %}Completed{% else %}Not completed{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+<h1>ToDo List #2:</h1>
+<ul>
+    {% for todo in todos2%}
+    <li>
+        {{ todo.title }}: {% if todo.completed %}Completed{% else %}Not completed{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+<h1>Our playlist:</h1>
+<ul>
+    {% for music in musics%}
+    <li>
+        {{ music.title }}: <a href="{{music.youtubelink}}">Click</a>
     </li>
     {% endfor %}
 </ul>
