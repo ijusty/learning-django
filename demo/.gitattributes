@@ -1,5 +1,2 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-demo/* linguist-vendored
-demo/demo/* linguist-vendored
-demo/testapp/* linguist-vendored
